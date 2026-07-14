@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Men — LUXORA</title>
+<meta name="description" content="Shop menswear at LUXORA — shirts, tees, hoodies, denim, jackets and shoes.">
+<meta property="og:title" content="Men — LUXORA">
+<meta property="og:description" content="Shop menswear at LUXORA — shirts, tees, hoodies, denim, jackets and shoes.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://luxora.example/men.html">
+<link rel="canonical" href="https://luxora.example/men.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#111111">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="%23111"/><text x="50" y="66" font-size="52" font-family="Georgia" fill="%23fff" text-anchor="middle">L</text></svg>'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/products.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/polish.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div id="navbar"></div>
+
+<section class="coming-soon" id="main">
+  <div class="cs-inner">
+    <span class="eyebrow">Menswear</span>
+    <h1>Coming Soon</h1>
+    <p>Our menswear collection is on its way — refined kurtas, shalwar kameez, and everyday essentials, crafted with the same care as our women's line. Sign up to be the first to know when it launches.</p>
+    <form class="cs-form" id="csForm">
+      <input type="email" placeholder="Your email address" aria-label="Email" required>
+      <button type="submit" class="btn btn-primary">Notify me</button>
+    </form>
+    <a href="women.html" class="btn btn-line" style="margin-top:18px">Explore Women's collection</a>
+  </div>
+</section>
+
+<div id="footer"></div>
+<script type="module">
+  import { renderNavbar } from "./js/navbar.js";
+  import { renderFooter } from "./js/app.js";
+  import { toast, isEmail } from "./js/utils.js";
+  renderNavbar("men");
+  renderFooter();
+  document.getElementById("csForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const v = e.target.querySelector("input").value;
+    if (!isEmail(v)) { toast("Enter a valid email", "err"); return; }
+    e.target.reset();
+    toast("You're on the list — we'll be in touch ✦", "ok");
+  });
+</script>
+</body>
+</html>
