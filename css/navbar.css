@@ -1,0 +1,46 @@
+/* ============================================================ LUXORA — navbar ============================================================ */
+.topbar{background:var(--ink);color:var(--bg);text-align:center;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;padding:9px 12px;font-weight:500}
+header.nav{position:sticky;top:0;z-index:70;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;gap:20px;height:74px}
+.nav-logo{font-family:var(--serif);font-size:1.7rem;font-weight:600;letter-spacing:.16em}
+.nav-logo span{color:var(--gold)}
+.nav-menu{display:flex;gap:28px;margin-left:14px;font-size:.9rem;font-weight:500}
+.nav-menu a{position:relative;padding:6px 0;letter-spacing:.02em}
+.nav-menu a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--gold);transition:width .25s}
+.nav-menu a:hover::after,.nav-menu a.active::after{width:100%}
+.nav-actions{margin-left:auto;display:flex;align-items:center;gap:4px}
+.nav-search{display:flex;align-items:center;background:var(--raise);border:1px solid var(--line);border-radius:999px;height:40px;padding:0 6px 0 15px;width:200px;transition:width .25s,border-color .2s;position:relative}
+.nav-search:focus-within{border-color:var(--gold);width:260px}
+.nav-search input{border:none;background:none;width:100%;font-size:.86rem;color:var(--ink)}
+.nav-search input:focus{outline:none}
+.ic-btn{position:relative;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;transition:background .2s}
+.ic-btn:hover{background:var(--raise)}
+.ic-btn svg{width:21px;height:21px;stroke:var(--ink);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.ic-count{position:absolute;top:1px;right:-1px;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--gold);color:#fff;font-size:.66rem;font-weight:700;display:grid;place-items:center}
+.nav-burger{display:none}
+/* autocomplete */
+.ac-panel{position:absolute;top:48px;left:0;right:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-lg);overflow:hidden;display:none;z-index:80}
+.ac-panel.open{display:block}
+.ac-item{display:flex;gap:12px;align-items:center;padding:10px 14px;cursor:pointer;transition:background .15s}
+.ac-item:hover{background:var(--raise)}
+.ac-item img{width:42px;height:52px;object-fit:cover;border-radius:8px}
+.ac-item b{font-size:.88rem;font-weight:600}
+.ac-item small{color:var(--ink-soft);font-size:.76rem}
+.ac-empty{padding:16px;color:var(--ink-soft);font-size:.86rem;text-align:center}
+/* mobile drawer */
+.m-drawer{position:fixed;inset:0 30% 0 0;background:var(--bg);z-index:95;transform:translateX(-100%);transition:transform .3s ease;padding:24px;display:flex;flex-direction:column;gap:6px;box-shadow:var(--shadow-lg)}
+.m-drawer.open{transform:none}
+.m-drawer a{padding:14px 6px;font-size:1.1rem;font-weight:500;border-bottom:1px solid var(--line);font-family:var(--serif)}
+.m-drawer .m-close{align-self:flex-end;font-size:1.6rem;border-bottom:none}
+@media(max-width:940px){
+  .nav-menu,.nav-search{display:none}
+  .nav-burger{display:grid}
+  .nav-inner{height:64px}
+}
+@media(min-width:941px){.m-drawer{display:none}}
+
+/* account link with text (sign in / sign up) */
+.nav-account{display:flex;align-items:center;gap:2px;padding:0 6px;border-radius:999px;transition:background .2s}
+.nav-account:hover{background:var(--raise)}
+.nav-account-text{font-size:.82rem;font-weight:600;white-space:nowrap;padding-right:6px}
+@media(max-width:1080px){.nav-account-text{display:none}}

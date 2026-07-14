@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create account — LUXORA</title>
+<meta name="description" content="Create your LUXORA account for faster checkout, order tracking and wishlist.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://luxora.example/signup.html">
+<meta property="og:title" content="Create Account — LUXORA">
+<meta property="og:description" content="Create your LUXORA account for faster checkout, order tracking and wishlist.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://luxora.example/signup.html">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#111111">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="%23111"/><text x="50" y="66" font-size="52" font-family="Georgia" fill="%23fff" text-anchor="middle">L</text></svg>'>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/navbar.css"><link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/forms.css"><link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/polish.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div id="navbar"></div>
+<div class="auth-wrap" id="main">
+  <div class="auth-card">
+    <h1>Join LUXORA</h1>
+    <p class="auth-sub">Create an account for faster checkout &amp; order tracking</p>
+    <div class="field">
+      <label for="name">Full name</label>
+      <input type="text" id="name" autocomplete="name" placeholder="Your name">
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" autocomplete="email" placeholder="you@example.com">
+    </div>
+    <div class="field">
+      <label for="password">Password</label>
+      <div class="pw-wrap">
+        <input type="password" id="password" autocomplete="new-password" placeholder="At least 6 characters">
+        <button type="button" id="pwToggle">Show</button>
+      </div>
+    </div>
+    <button class="btn btn-primary btn-block" id="submitBtn">Create account</button>
+    <div class="auth-alt">Already have an account? <a href="login.html">Sign in</a></div>
+    <p class="form-note">By creating an account you agree to LUXORA's Terms &amp; Privacy Policy.</p>
+  </div>
+</div>
+<div id="footer"></div>
+<script type="module" src="js/signup.js"></script>
+</body>
+</html>

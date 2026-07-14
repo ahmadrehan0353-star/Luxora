@@ -1,0 +1,46 @@
+/* ============================================================ LUXORA — animation library ============================================================ */
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes spinSlow{to{transform:rotate(360deg)}}
+@keyframes pulseRing{0%{box-shadow:0 0 0 0 rgba(184,152,90,.4)}70%{box-shadow:0 0 0 12px rgba(184,152,90,0)}100%{box-shadow:0 0 0 0 rgba(184,152,90,0)}}
+.stagger>*{animation:fadeUp .6s ease both}
+.stagger>*:nth-child(2){animation-delay:.06s}
+.stagger>*:nth-child(3){animation-delay:.12s}
+.stagger>*:nth-child(4){animation-delay:.18s}
+.stagger>*:nth-child(5){animation-delay:.24s}
+.stagger>*:nth-child(6){animation-delay:.30s}
+.stagger>*:nth-child(7){animation-delay:.36s}
+.stagger>*:nth-child(8){animation-delay:.42s}
+
+/* ============================================================ Cinematic layer — elegant motion for a fashion brand ============================================================ */
+/* hero: slow ken-burns zoom on the active slide image */
+.hero-slide.on img{animation:kenburns 7s ease-out both}
+@keyframes kenburns{from{transform:scale(1.12)}to{transform:scale(1)}}
+/* hero text: staggered rise + fade */
+.hero-slide.on .eyebrow{animation:heroRise .8s .2s ease both}
+.hero-slide.on h1{animation:heroRise .9s .35s ease both}
+.hero-slide.on p{animation:heroRise .9s .5s ease both}
+.hero-slide.on .btn{animation:heroRise .9s .65s ease both}
+@keyframes heroRise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+/* category tiles + product frames: gentle zoom already on hover; add reveal scale */
+.reveal.in .cat-tile,.reveal.in .p-card{animation:softIn .7s ease both}
+@keyframes softIn{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:none}}
+/* section headings: underline sweep */
+.sec-head h2{position:relative;display:inline-block}
+.reveal.in .sec-head h2::after{content:"";position:absolute;left:0;bottom:-8px;height:2px;width:0;background:var(--gold);animation:sweep .8s .3s ease forwards}
+@keyframes sweep{to{width:56px}}
+/* image loads fade in smoothly instead of popping */
+.p-frame img,.cat-tile img,.gal-main img{animation:imgFade .8s ease both}
+@keyframes imgFade{from{opacity:0}to{opacity:1}}
+/* sale banner: slow parallax drift */
+.sale-banner img{animation:drift 12s ease-in-out infinite alternate}
+@keyframes drift{from{transform:scale(1.08) translateX(-1%)}to{transform:scale(1.12) translateX(1%)}}
+/* buttons: subtle shine on hover */
+.btn-primary,.btn-gold{position:relative;overflow:hidden}
+.btn-primary::after,.btn-gold::after{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);transition:left .6s ease}
+.btn-primary:hover::after,.btn-gold:hover::after{left:130%}
+/* smooth page entrance */
+main,.wrap{animation:pageIn .5s ease both}
+@keyframes pageIn{from{opacity:0}to{opacity:1}}
+@media (prefers-reduced-motion: reduce){
+  .hero-slide.on img,.sale-banner img,.hero-slide.on .eyebrow,.hero-slide.on h1,.hero-slide.on p,.hero-slide.on .btn{animation:none!important}
+}

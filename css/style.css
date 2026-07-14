@@ -1,0 +1,139 @@
+/* ============================================================
+   LUXORA — core design system
+   ============================================================ */
+:root{
+  --bg:#ffffff; --surface:#ffffff; --raise:#faf9f7;
+  --ink:#111111; --ink-soft:#5b5b5b; --line:#ececec; --line-strong:#dcdcdc;
+  --accent:#111111; --accent-ink:#ffffff;
+  --gold:#b8985a;
+  --ok:#1f7a44; --warn:#a8611f; --err:#b23838;
+  --serif:'Playfair Display', Georgia, serif;
+  --sans:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --radius:14px; --radius-lg:22px;
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+  --shadow-lg:0 24px 60px rgba(0,0,0,.14);
+  --wrap:1240px;
+  --step:1;
+}
+[data-theme="dark"]{
+  --bg:#0e0e10; --surface:#151518; --raise:#1c1c20;
+  --ink:#f4f2ee; --ink-soft:#a7a5a0; --line:#26262b; --line-strong:#33333a;
+  --accent:#f4f2ee; --accent-ink:#111111;
+  --shadow:0 10px 30px rgba(0,0,0,.5); --shadow-lg:0 24px 60px rgba(0,0,0,.6);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:hidden}
+body{
+  font-family:var(--sans);background:var(--bg);color:var(--ink);
+  line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;
+  transition:background .3s ease,color .3s ease;
+}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.14;letter-spacing:-.01em}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input,select,textarea{font-family:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+@media(max-width:600px){.wrap{padding:0 18px}}
+
+.eyebrow{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+.muted{color:var(--ink-soft)}
+.center{text-align:center}
+:focus-visible{outline:2.5px solid var(--gold);outline-offset:3px;border-radius:4px}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* ---- buttons ---- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  border-radius:999px;padding:14px 30px;font-size:.88rem;font-weight:600;
+  letter-spacing:.03em;transition:transform .2s ease,box-shadow .2s ease,background .2s,color .2s;
+  white-space:nowrap}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn-line{border:1.5px solid var(--ink);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--bg)}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.btn-block{width:100%}
+.btn-sm{padding:9px 18px;font-size:.8rem}
+.btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+
+/* ---- section rhythm ---- */
+.section{padding:76px 0}
+@media(max-width:700px){.section{padding:48px 0}}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:34px}
+.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.6rem)}
+.sec-head .eyebrow{margin-bottom:10px;display:block}
+.sec-head a{font-size:.86rem;font-weight:600;border-bottom:1.5px solid var(--ink);padding-bottom:2px;white-space:nowrap}
+.sec-head a:hover{color:var(--gold);border-color:var(--gold)}
+
+/* ---- product grid & cards ---- */
+.p-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+@media(max-width:1000px){.p-grid{grid-template-columns:repeat(3,1fr);gap:18px}}
+@media(max-width:720px){.p-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
+.p-card{position:relative;animation:fadeUp .6s ease both}
+.p-card .p-frame{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;background:var(--raise);cursor:pointer}
+.p-card .p-frame img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease,opacity .4s ease}
+.p-card .p-frame img.alt{position:absolute;inset:0;opacity:0}
+.p-card .p-frame:hover img.main{opacity:0}
+.p-card .p-frame:hover img.alt{opacity:1}
+.p-card .p-frame:hover img{transform:scale(1.04)}
+.p-badges{position:absolute;top:12px;left:12px;display:flex;flex-direction:column;gap:6px;z-index:2}
+.p-badge{font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:var(--ink);color:var(--bg)}
+.p-badge.sale{background:var(--err)}
+.p-badge.new{background:var(--gold)}
+.p-heart{position:absolute;top:10px;right:10px;width:38px;height:38px;border-radius:50%;
+  background:rgba(255,255,255,.92);display:grid;place-items:center;z-index:2;transition:transform .2s;border:1px solid var(--line)}
+[data-theme="dark"] .p-heart{background:rgba(30,30,34,.9)}
+.p-heart:hover{transform:scale(1.12)}
+.p-heart svg{width:18px;height:18px;stroke:var(--ink);fill:none;stroke-width:1.7}
+.p-heart.on svg{fill:var(--err);stroke:var(--err)}
+.p-quick{position:absolute;left:10px;right:10px;bottom:10px;z-index:2;
+  background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:999px;
+  padding:11px;font-size:.82rem;font-weight:600;text-align:center;
+  opacity:0;transform:translateY(10px);transition:.25s}
+.p-frame:hover .p-quick{opacity:1;transform:none}
+.p-quick:hover{background:var(--ink);color:var(--bg)}
+.p-info{padding:13px 2px 0}
+.p-info .cat{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+.p-info .name{font-family:var(--serif);font-size:1.05rem;margin:3px 0 4px;display:block}
+.p-info .price{font-weight:600;font-size:.95rem}
+.p-info .price .was{color:var(--ink-soft);text-decoration:line-through;font-weight:400;margin-right:7px}
+.p-info .price .now{color:var(--err)}
+.p-swatches{display:flex;gap:6px;margin-top:9px}
+.p-swatches span{width:14px;height:14px;border-radius:50%;border:1px solid var(--line-strong)}
+
+/* ---- forms ---- */
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+.field label{font-size:.82rem;font-weight:600}
+.field input,.field select,.field textarea{
+  background:var(--surface);border:1.5px solid var(--line-strong);border-radius:12px;
+  padding:13px 15px;font-size:.95rem;color:var(--ink);transition:border-color .2s,box-shadow .2s}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,152,90,.18)}
+.field .err-text{color:var(--err);font-size:.78rem;display:none}
+.field.invalid input,.field.invalid select{border-color:var(--err)}
+.field.invalid .err-text{display:block}
+
+/* ---- toast ---- */
+.lx-toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);
+  background:var(--ink);color:var(--bg);border-radius:999px;padding:13px 26px;font-size:.88rem;
+  z-index:1000;opacity:0;pointer-events:none;transition:.3s;box-shadow:var(--shadow-lg);max-width:90vw}
+.lx-toast.show{opacity:1;transform:translate(-50%,0)}
+.lx-toast.err{background:var(--err);color:#fff}
+.lx-toast.ok{background:var(--ok);color:#fff}
+
+/* ---- skeleton loading ---- */
+.skeleton{background:linear-gradient(100deg,var(--raise) 30%,var(--line) 50%,var(--raise) 70%);
+  background-size:200% 100%;animation:shimmer 1.3s linear infinite;border-radius:var(--radius)}
+@keyframes shimmer{to{background-position:-200% 0}}
+
+/* ---- animations ---- */
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ---- empty states ---- */
+.empty{padding:80px 20px;text-align:center;color:var(--ink-soft)}
+.empty b{font-family:var(--serif);font-size:1.4rem;color:var(--ink);display:block;margin-bottom:8px}

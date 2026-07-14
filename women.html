@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Women — LUXORA</title>
+<meta name="description" content="Shop womenswear at LUXORA — dresses, abayas, hijabs, co-ords, denim and more.">
+<meta property="og:title" content="Women — LUXORA">
+<meta property="og:description" content="Shop womenswear at LUXORA — dresses, abayas, hijabs, co-ords, denim and more.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://luxora.example/women.html">
+<link rel="canonical" href="https://luxora.example/women.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#111111">
+<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="%23111"/><text x="50" y="66" font-size="52" font-family="Georgia" fill="%23fff" text-anchor="middle">L</text></svg>'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/navbar.css">
+<link rel="stylesheet" href="css/footer.css">
+<link rel="stylesheet" href="css/products.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/polish.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div id="navbar"></div>
+
+<section class="cat-hero">
+  <img id="catHeroImg" src="" alt="">
+  <div class="inner">
+    <h1 id="catHeroTitle"></h1>
+    <p id="catHeroText"></p>
+  </div>
+</section>
+
+<div class="wrap plp" id="main">
+  <aside>
+    <button class="btn btn-line filters-toggle" id="filtersToggle">Filters &amp; sort</button>
+    <div class="filters" id="filters">
+      <h3>Category</h3>
+      <div class="fgroup" id="subFilters"></div>
+      <h3>Size</h3>
+      <div class="fgroup" id="sizeFilters"></div>
+      <h3>Colour</h3>
+      <div class="fgroup" id="colorFilters"></div>
+      <h3>Max price</h3>
+      <span class="price-val" id="priceVal">Rs 0</span>
+      <input type="range" id="priceSlider" min="0" max="100" value="100" step="5" aria-label="Maximum price">
+      <br><button class="clear-filters" id="clearFilters">Clear all filters</button>
+    </div>
+  </aside>
+
+  <div>
+    <div class="plp-toolbar">
+      <span class="plp-count" id="plpCount"></span>
+      <div class="plp-sort">
+        <label for="sortSel">Sort</label>
+        <select id="sortSel" aria-label="Sort products">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: low to high</option>
+          <option value="price-desc">Price: high to low</option>
+          <option value="popular">Popularity</option>
+          <option value="name">Name: A–Z</option>
+        </select>
+      </div>
+    </div>
+    <div class="p-grid" id="plpGrid"></div>
+    <div class="plp-empty" id="plpEmpty" style="display:none">
+      <b>Nothing matches those filters</b>
+      Try widening the price range or clearing a filter.
+    </div>
+  </div>
+</div>
+
+<div id="footer"></div>
+<script type="module" src="js/women.js"></script>
+</body>
+</html>

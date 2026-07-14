@@ -1,0 +1,60 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ---- helpers ----
+    // The single admin email allowed to manage the store.
+    // IMPORTANT: change this to match ADMIN_EMAIL in firebase-config.js.
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email == 'your-email@example.com';
+    }
+    function signedIn() { return request.auth != null; }
+    function isStr(v, maxLen) { return v is string && v.size() > 0 && v.size() <= maxLen; }
+
+    // ---- PRODUCTS: public read, admin write ----
+    match /products/{id} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // ---- CATEGORIES & BANNERS: public read, admin write ----
+    match /categories/{id} { allow read: if true; allow write: if isAdmin(); }
+    match /banners/{id}    { allow read: if true; allow write: if isAdmin(); }
+
+    // ---- COUPONS: public read (checkout validates), admin write ----
+    match /coupons/{id} { allow read: if true; allow write: if isAdmin(); }
+
+    // ---- USERS: a person reads/writes only their own profile; admin reads all ----
+    match /users/{uid} {
+      allow read:   if isAdmin() || (signedIn() && request.auth.uid == uid);
+      allow create: if signedIn() && request.auth.uid == uid
+                    && isStr(request.resource.data.email, 200);
+      allow update: if isAdmin() || (signedIn() && request.auth.uid == uid);
+      allow delete: if isAdmin();
+    }
+
+    // ---- ORDERS: customer creates & reads own; admin manages all ----
+    match /orders/{id} {
+      allow create: if signedIn()
+                    && request.resource.data.uid == request.auth.uid
+                    && request.resource.data.status == 'pending'
+                    && request.resource.data.totals.total is number;
+      allow read:   if isAdmin() || (signedIn() && resource.data.uid == request.auth.uid);
+      allow update, delete: if isAdmin();
+    }
+
+    // ---- REVIEWS: signed-in users submit (pending); public reads approved; admin moderates ----
+    match /reviews/{id} {
+      allow create: if signedIn()
+                    && request.resource.data.status == 'pending'
+                    && isStr(request.resource.data.text, 2000)
+                    && isStr(request.resource.data.name, 120)
+                    && request.resource.data.rating is int
+                    && request.resource.data.rating >= 1
+                    && request.resource.data.rating <= 5;
+      allow read:   if resource.data.status == 'approved' || isAdmin();
+      allow update, delete: if isAdmin();
+    }
+  }
+}

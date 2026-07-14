@@ -1,0 +1,40 @@
+/* ============================================================ LUXORA — responsive refinements ============================================================ */
+@media(max-width:1100px){:root{--wrap:100%}}
+@media(max-width:940px){
+  .sec-head{margin-bottom:24px}
+  .hero-content h1{margin:10px 0 14px}
+}
+@media(max-width:600px){
+  body{font-size:15px}
+  .btn{padding:12px 24px}
+  .section{padding:40px 0}
+  .ft-form{max-width:100%}
+}
+@media print{header.nav,footer.ft,.hero-arrow,.lx-toast{display:none}}
+
+/* ============================================================ Step 5 — accessibility & responsive polish ============================================================ */
+/* visible skip link for keyboard users */
+.skip-link{position:absolute;left:-999px;top:0;z-index:200;background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:0 0 10px 0;font-weight:600}
+.skip-link:focus{left:0}
+/* larger tap targets on touch devices */
+@media(hover:none){
+  .btn{min-height:46px}
+  .ic-btn,.p-heart,.qty-box button,.line-qty button{min-width:44px;min-height:44px}
+  .nav-menu a{padding:10px 0}
+}
+/* honour reduced transparency / contrast */
+@media (prefers-contrast: more){
+  :root{--line:#999;--line-strong:#555;--ink-soft:#333}
+  [data-theme="dark"]{--line:#666;--line-strong:#999;--ink-soft:#ccc}
+}
+/* small phones */
+@media(max-width:400px){
+  .p-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .hero-content h1{font-size:2.1rem}
+  .cart-line{grid-template-columns:80px 1fr;gap:12px}
+  .cart-line .cline-price{grid-column:2;text-align:left}
+}
+/* prevent layout shift on image load */
+img{background:var(--raise)}
+/* focus ring consistency */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2.5px solid var(--gold);outline-offset:2px}

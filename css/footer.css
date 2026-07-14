@@ -1,0 +1,31 @@
+/* ============================================================ LUXORA — footer ============================================================ */
+footer.ft{background:var(--ink);color:#cfcfcf;margin-top:40px}
+[data-theme="dark"] footer.ft{background:#000}
+.ft-top{display:grid;grid-template-columns:1.4fr .85fr .95fr .95fr 1.3fr;gap:32px;padding:64px 0 48px}
+.ft-logo{font-family:var(--serif);font-size:1.6rem;color:#fff;letter-spacing:.16em;margin-bottom:14px}
+.ft-logo span{color:var(--gold)}
+.ft-col p{font-size:.88rem;max-width:32ch;line-height:1.8}
+.ft-col h4{color:#fff;font-family:var(--sans);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:18px;font-weight:600}
+.ft-col a{display:block;padding:6px 0;font-size:.9rem;color:#bdbdbd;transition:color .18s}
+.ft-col a:hover{color:var(--gold)}
+.ft-news p{margin-bottom:16px}
+.ft-contact{list-style:none;margin:18px 0 6px;display:flex;flex-direction:column;gap:10px}
+.ft-contact li{display:flex;align-items:flex-start;gap:10px;font-size:.86rem;color:#bdbdbd;line-height:1.5}
+.ft-contact svg{width:16px;height:16px;flex-shrink:0;margin-top:2px;stroke:var(--gold);fill:none;stroke-width:1.7}
+.ft-contact a{color:#bdbdbd;transition:color .18s}
+.ft-contact a:hover{color:var(--gold)}
+.ft-edit{color:#7a7a7a;font-size:.76rem;font-style:italic}
+.ft-form{display:flex;background:rgba(255,255,255,.08);border-radius:999px;padding:5px;max-width:340px}
+.ft-form input{flex:1;min-width:0;border:none;background:none;padding:11px 16px;color:#fff;font-size:.88rem}
+.ft-form input:focus{outline:none}
+.ft-form button{border-radius:999px;background:var(--gold);color:#fff;padding:11px 22px;font-weight:600;font-size:.84rem}
+.ft-social{display:flex;gap:12px;margin-top:18px}
+.ft-social a{width:40px;height:40px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:grid;place-items:center}
+.ft-social a:hover{background:var(--gold);border-color:var(--gold)}
+.ft-social svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.7}
+.ft-bar{border-top:1px solid rgba(255,255,255,.1);padding:22px 0;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.8rem;color:#9a9a9a}
+.ft-pay{display:flex;gap:8px}
+.ft-pay span{border:1px solid rgba(255,255,255,.16);border-radius:6px;padding:3px 10px;font-size:.72rem;letter-spacing:.06em;font-weight:600;color:#e7d6b2}
+@media(max-width:1100px){.ft-top{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:700px){.ft-top{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ft-top{grid-template-columns:1fr}}

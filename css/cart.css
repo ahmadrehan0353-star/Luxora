@@ -1,0 +1,66 @@
+/* ============================================================ LUXORA — cart, wishlist & checkout ============================================================ */
+.page-head{padding:36px 0 8px}
+.page-head h1{font-size:clamp(1.8rem,4vw,2.8rem)}
+.page-head p{color:var(--ink-soft);margin-top:6px}
+
+/* cart layout */
+.cart-layout{display:grid;grid-template-columns:1fr 380px;gap:40px;padding:24px 0 80px;align-items:start}
+@media(max-width:900px){.cart-layout{grid-template-columns:1fr;gap:24px}}
+
+.cart-line{display:grid;grid-template-columns:104px 1fr auto;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
+.cart-line .cimg{border-radius:12px;overflow:hidden;aspect-ratio:4/5;background:var(--raise)}
+.cart-line .cimg img{width:100%;height:100%;object-fit:cover}
+.cart-line .cname{font-family:var(--serif);font-size:1.1rem;margin-bottom:4px}
+.cart-line .cmeta{font-size:.82rem;color:var(--ink-soft);margin-bottom:12px}
+.cart-line .cline-price{font-weight:600;text-align:right;white-space:nowrap}
+.cart-line .cline-price .was{display:block;font-weight:400;font-size:.82rem;color:var(--ink-soft);text-decoration:line-through}
+.line-qty{display:inline-flex;align-items:center;border:1.5px solid var(--line-strong);border-radius:999px}
+.line-qty button{width:34px;height:38px;font-size:1.05rem;color:var(--ink)}
+.line-qty span{min-width:26px;text-align:center;font-weight:600;font-size:.9rem}
+.line-remove{display:block;margin-top:10px;font-size:.78rem;color:var(--ink-soft);text-decoration:underline;text-align:right;width:100%}
+.line-remove:hover{color:var(--err)}
+
+/* summary */
+.summary{background:var(--raise);border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px;position:sticky;top:96px}
+.summary h3{font-family:var(--serif);font-size:1.3rem;margin-bottom:18px}
+.sum-row{display:flex;justify-content:space-between;padding:8px 0;font-size:.92rem}
+.sum-row.muted{color:var(--ink-soft)}
+.sum-total{display:flex;justify-content:space-between;padding:16px 0 4px;margin-top:8px;border-top:1px solid var(--line-strong);font-weight:700;font-size:1.15rem}
+.coupon{display:flex;gap:8px;margin:16px 0}
+.coupon input{flex:1;border:1.5px solid var(--line-strong);border-radius:10px;padding:11px 13px;background:var(--surface);color:var(--ink);font-size:.88rem}
+.coupon button{border:1.5px solid var(--ink);border-radius:10px;padding:0 18px;font-weight:600;font-size:.85rem}
+.coupon button:hover{background:var(--ink);color:var(--bg)}
+.coupon-ok{font-size:.82rem;color:var(--ok);margin-bottom:10px;font-weight:500}
+.summary .btn{margin-top:18px}
+.trust-line{display:flex;gap:14px;justify-content:center;margin-top:16px;font-size:.74rem;color:var(--ink-soft)}
+
+/* wishlist grid reuses .p-grid */
+.wish-empty,.cart-empty-state{padding:80px 20px;text-align:center;color:var(--ink-soft)}
+.wish-empty b,.cart-empty-state b{font-family:var(--serif);font-size:1.5rem;color:var(--ink);display:block;margin-bottom:10px}
+.cart-empty-state .btn{margin-top:20px}
+
+/* checkout */
+.checkout{display:grid;grid-template-columns:1fr 400px;gap:44px;padding:24px 0 80px;align-items:start}
+@media(max-width:900px){.checkout{grid-template-columns:1fr}}
+.steps{display:flex;gap:8px;margin-bottom:30px}
+.step{flex:1;text-align:center;font-size:.8rem;font-weight:600;color:var(--ink-soft);padding-bottom:10px;border-bottom:2px solid var(--line)}
+.step.on{color:var(--ink);border-color:var(--gold)}
+.step.done{color:var(--ok);border-color:var(--ok)}
+.co-section{margin-bottom:30px}
+.co-section h3{font-family:var(--serif);font-size:1.3rem;margin-bottom:16px}
+.form-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:520px){.form-2{grid-template-columns:1fr}}
+.pay-methods{display:flex;flex-direction:column;gap:10px}
+.pay-opt{display:flex;align-items:center;gap:12px;border:1.5px solid var(--line-strong);border-radius:12px;padding:14px 16px;cursor:pointer;transition:border-color .15s}
+.pay-opt.on{border-color:var(--gold);background:var(--raise)}
+.pay-opt input{accent-color:var(--gold)}
+.pay-opt .pay-name{font-weight:600;font-size:.92rem}
+.pay-opt .pay-desc{font-size:.8rem;color:var(--ink-soft)}
+.co-review-item{display:flex;justify-content:space-between;padding:8px 0;font-size:.9rem;border-bottom:1px solid var(--line)}
+.confirm{max-width:560px;margin:0 auto;text-align:center;padding:70px 24px 100px}
+.confirm .tick{width:78px;height:78px;border-radius:50%;background:var(--ok);display:grid;place-items:center;margin:0 auto 24px}
+.confirm .tick svg{width:38px;height:38px;stroke:#fff;fill:none;stroke-width:2.5}
+.confirm h1{font-size:2.2rem;margin-bottom:10px}
+.confirm p{color:var(--ink-soft);margin-bottom:8px}
+.confirm .order-id{font-weight:700;color:var(--ink)}
+.confirm .btn{margin-top:24px}

@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /checkout.html
+Disallow: /profile.html
+Disallow: /cart.html
+Disallow: /wishlist.html
+Disallow: /login.html
+Disallow: /signup.html
+
+Sitemap: https://luxora.example/sitemap.xml
