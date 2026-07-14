@@ -58,34 +58,8 @@ function buildSeed() {
   };
 
   return [
-    // women (largest)
-    mk("w-unstitched-01", "Zara Lawn 3-Piece Unstitched", "women", "Unstitched", 4200, 3400, ["featured","new","trending"], [{name:"Powder Blue",hex:"#bcd0e0"},{name:"Blush",hex:"#e3c4c0"}], ["Unstitched"], IMG("pakistani,lawn,suit","w-unstitched-01")),
-    mk("w-unstitched-02", "Meher Embroidered Lawn Suit", "women", "Unstitched", 5800, null, ["best","featured"], [{name:"Sage",hex:"#9aa383"},{name:"Ivory",hex:"#efe9dd"}], ["Unstitched"], IMG("embroidered,textile,dupatta","w-unstitched-02")),
-    mk("w-unstitched-03", "Cambric Printed 2-Piece", "women", "Unstitched", 3200, 2600, ["new"], [{name:"Mustard",hex:"#c9a24b"},{name:"Rust",hex:"#a8551f"}], ["Unstitched"], IMG("printed,fabric,textile","w-unstitched-03")),
-    mk("w-stitched-01", "Ready-to-Wear Embroidered Kurta Set", "women", "Stitched", 6500, 5200, ["featured","trending"], [{name:"Emerald",hex:"#1f6b4a"},{name:"Maroon",hex:"#6b1f2a"}], ["XS","S","M","L","XL"], IMG("kurta,woman,fashion","w-stitched-01")),
-    mk("w-kurti-01", "Chikankari Cotton Kurti", "women", "Kurtis", 2800, null, ["best","new"], [{name:"White",hex:"#fff"},{name:"Sky",hex:"#bcd0e0"},{name:"Peach",hex:"#f0c9a8"}], ["S","M","L","XL"], IMG("kurti,cotton,woman","w-kurti-01")),
-    mk("w-kurti-02", "Printed Lawn Kurti", "women", "Kurtis", 1900, 1500, ["trending"], [{name:"Teal",hex:"#2a7a72"},{name:"Coral",hex:"#e07856"}], ["S","M","L","XL"], IMG("kurti,printed,fashion","w-kurti-02")),
-    mk("w-sk-01", "Embroidered Shalwar Kameez", "women", "Shalwar Kameez", 7200, null, ["featured"], [{name:"Navy",hex:"#26304a"},{name:"Dusty Rose",hex:"#c99"}], ["S","M","L","XL"], IMG("shalwar,kameez,fashion","w-sk-01")),
-    mk("w-lawn-01", "Premium Summer Lawn Collection", "women", "Lawn", 4800, 3900, ["best","featured","new"], [{name:"Mint",hex:"#b8ddc0"},{name:"Lilac",hex:"#c9b8dd"}], ["Unstitched"], IMG("lawn,summer,textile","w-lawn-01")),
-    mk("w-formal-01", "Chiffon Formal 3-Piece", "women", "Formals", 12500, 9800, ["featured","trending"], [{name:"Wine",hex:"#5a1f2a"},{name:"Black",hex:"#111"}], ["S","M","L"], IMG("formal,chiffon,dress","w-formal-01")),
-    mk("w-party-01", "Sequin Party Maxi", "women", "Party Wear", 15800, null, ["trending","new"], [{name:"Champagne",hex:"#e6d5b8"},{name:"Onyx",hex:"#161616"}], ["S","M","L"], IMG("party,evening,gown","w-party-01")),
-    mk("w-abaya-01", "Nour Flowing Abaya", "women", "Abayas", 6800, 5400, ["featured","trending"], [{name:"Black",hex:"#111"},{name:"Stone",hex:"#b8ae9c"}], ["S","M","L","XL"], IMG("abaya,modest,fashion","w-abaya-01")),
-    mk("w-abaya-02", "Layla Open Abaya", "women", "Abayas", 7200, null, ["new"], [{name:"Charcoal",hex:"#3a3a3a"}], ["S","M","L","XL"], IMG("abaya,modest,woman","w-abaya-02")),
-    mk("w-hijab-01", "Silk Modal Hijab", "women", "Hijabs", 1200, null, ["best"], [{name:"Blush",hex:"#e3c4c0"},{name:"Navy",hex:"#26304a"},{name:"Camel",hex:"#c19a6b"}], ["One size"], IMG("hijab,scarf,silk","w-hijab-01")),
-    mk("w-acc-01", "Gold Jhumka Set", "women", "Accessories", 1800, null, ["new"], [{name:"Gold",hex:"#c9a24b"}], ["One size"], IMG("earrings,gold,jewelry","w-acc-01")),
-    // men
-    mk("m-kurta-01", "Cotton Embroidered Kurta", "men", "Kurtas", 3400, 2800, ["featured","best"], [{name:"White",hex:"#fff"},{name:"Cream",hex:"#eee6d6"},{name:"Grey",hex:"#9a9a9a"}], ["S","M","L","XL","XXL"], IMG("men,kurta,fashion","m-kurta-01")),
-    mk("m-sk-01", "Wash & Wear Shalwar Kameez", "men", "Shalwar Kameez", 4200, null, ["best","new"], [{name:"Beige",hex:"#d9c9ae"},{name:"Navy",hex:"#26304a"},{name:"Black",hex:"#111"}], ["S","M","L","XL","XXL"], IMG("men,shalwar,kameez","m-sk-01")),
-    mk("m-shirt-01", "Formal Cotton Shirt", "men", "Shirts", 2800, null, ["featured"], [{name:"White",hex:"#fff"},{name:"Sky",hex:"#bcd0e0"}], ["S","M","L","XL","XXL"], IMG("men,formal,shirt","m-shirt-01")),
-    mk("m-tshirt-01", "Premium Cotton Tee", "men", "T-Shirts", 1400, 1100, ["best","new"], [{name:"Black",hex:"#111"},{name:"Ecru",hex:"#e7ddca"},{name:"Olive",hex:"#6c6547"}], ["S","M","L","XL","XXL"], IMG("men,tshirt,cotton","m-tshirt-01")),
-    mk("m-waistcoat-01", "Embroidered Waistcoat", "men", "Waistcoats", 5200, 4200, ["trending","new"], [{name:"Maroon",hex:"#6b1f2a"},{name:"Black",hex:"#111"}], ["S","M","L","XL"], IMG("men,waistcoat","m-waistcoat-01")),
-    mk("m-trouser-01", "Cotton Dress Trousers", "men", "Trousers", 2600, null, ["best"], [{name:"Charcoal",hex:"#3a3a3a"},{name:"Khaki",hex:"#b8a678"}], ["30","32","34","36","38"], IMG("men,trousers","m-trouser-01")),
-    mk("m-acc-01", "Leather Peshawari Sandals", "men", "Accessories", 3200, 2600, ["new"], [{name:"Brown",hex:"#6b4a2c"},{name:"Tan",hex:"#b07a4a"}], ["40","41","42","43","44"], IMG("leather,sandals,shoes","m-acc-01")),
-    // kids
-    mk("k-girl-01", "Girls Embroidered Frock", "kids", "Girls", 2400, 1900, ["featured","new"], [{name:"Blush",hex:"#e3c4c0"},{name:"Sky",hex:"#bcd0e0"}], ["2-3y","4-5y","6-7y","8-9y"], IMG("kids,girl,dress","k-girl-01")),
-    mk("k-boy-01", "Boys Kurta Pajama Set", "kids", "Boys", 2200, null, ["best"], [{name:"White",hex:"#fff"},{name:"Navy",hex:"#26304a"}], ["2-3y","4-5y","6-7y","8-9y"], IMG("kids,boy,kurta","k-boy-01")),
-    mk("k-baby-01", "Baby Cotton Romper", "kids", "Babies", 1400, null, ["trending","new"], [{name:"Cream",hex:"#eee6d6"},{name:"Mint",hex:"#b8ddc0"}], ["0-3m","3-6m","6-12m","12-18m"], IMG("baby,romper,clothes","k-baby-01")),
-    mk("k-acc-01", "Kids Embroidered Cap", "kids", "Accessories", 800, null, ["new"], [{name:"Natural",hex:"#e0d3b8"}], ["S","M","L"], IMG("kids,cap,hat","k-acc-01"))
+    // No sample products — the store is managed entirely from the admin panel.
+    // Add products via /admin/products.html; they save to Firestore and appear here.
   ];
 }
 
